@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: overseas-halibut-java-quarkus-gitops
+  description: This is GitOps manifest for overseas-halibut-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: overseas-halibut-java-quarkus
+    janus-idp.io/tekton: overseas-halibut-java-quarkus 
+    backstage.io/kubernetes-id: overseas-halibut-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:overseas-halibut-java-quarkus
